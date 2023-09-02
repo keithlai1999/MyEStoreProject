@@ -14,6 +14,7 @@ The eStore Backend is the server-side component of an e-commerce platform design
 - Product review system
 - Purchase order management
 - RESTful APIs for communication with frontend
+- Integration Testing: Develop integration tests to validate the functionalities of different components working together.
 
 ## Technologies Used
 
