@@ -128,4 +128,25 @@ public class UserControllerTest {
         User deletedUser = userService.getUserById(userId);
         assertNull(deletedUser);
     }
+
+    @Test
+    public void testGetUserByUsername() throws Exception {
+        String username = "alice"; // Adjust the username as needed
+
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/users/by-username/" + username))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+        
+    }
+
+    @Test
+    public void testGetUserByEmail() throws Exception {
+        String email = "alice@example.com"; // Adjust the email as needed
+
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/users/by-email/" + email))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+    }
 }
